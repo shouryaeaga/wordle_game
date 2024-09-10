@@ -76,11 +76,25 @@ void playGame() {
         std::cout << "\n__________________\n\n";
         if (word == guess) {
             std::cout << "YOU WIN!" << "\n";
-            return;
+            std::cout << "Do you want to play again (y/n):";
+            std::string answer;
+            std::getline(std::cin, answer);
+            if (tolower(answer[0]) == 'y') {
+                playGame();
+            } else {
+                return;
+            }
         }
     }
     std::cout << "YOU LOST!" << "\n";
-    return;
+    std::cout << "Do you want to play again (y/n):";
+    std::string answer;
+    std::getline(std::cin, answer);
+    if (tolower(answer[0]) == 'y') {
+        playGame();
+    } else {
+        return;
+    }
 
 }
 
